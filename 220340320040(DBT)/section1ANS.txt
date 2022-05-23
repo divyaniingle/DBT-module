@@ -1,0 +1,82 @@
+
+Write SELECT statements to achieve the following:-
+3.	Display all the employees where SAL between 2500 and 5000 (inclusive of both).
+ANS==SELECT ENAME FROM EMP WHERE SAL BETWEEN 2500 AND 5000;
+
+ENAME
+KING
+BLACK
+JONES
+
+4.	Display all the ENAMEs in descending order of ENAME.
+ANS==SELECT ENAME FROM EMP ORDER BY ENAME DESC;
+
+ENAME
+MARTIN
+KING
+JONES
+CHARK
+BLACK
+ALLEN
+
+5.	Display all the JOBs in lowercase.
+ANS==SELECT LOWER(JOB) FROM EMP;
+
+LOWER(JOB)
+clerk
+clerk
+manager
+manager
+salesman
+salesman
+
+6.	Display the ENAMEs and the lengths of the ENAMEs.
+ANS==SELECT ENAME,LENGTH(ENAME) 'LENGTH' FROM EMP;
+
+ENAME   LENGTH
+KING	4
+BLACK	5
+CHARK	5
+JONES	5
+MARTIN	6
+ALLEN	5
+
+7.	Display the DEPTNO and the count of employees who belong to that DEPTNO .
+ANS==SELECT DEPT.DEPTNO,COUNT(ENAME) FROM DEPT,EMP WHERE EMP.DEPTNO=DEPT.DEPTNO GROUP BY 1;
+
+DEPTNO COUNT(ENAME)
+10	2
+30	3 
+20	1
+
+8.	Display the DNAMEs and the ENAMEs who belong to that DNAME.
+SELECT DNAME,ENAME FROM DEPT,EMP WHERE EMP.DEPTNO=DEPT.DEPTNO;
+
+DNAME  ENAME
+ACCOUNTING	KING
+ACCOUNTING	CHARK
+RESEARCH	JONES
+SALES	BLACK
+SALES	MARTIN
+SALES	ALLEN
+
+9.	Display the position at which the string ‘AR’ occurs in the ename.
+SELECT INSTR(ENAME,'AR') FROM EMP;
+
+INSTR(ENAME,'AR')
+0
+0
+3
+0
+2
+0
+10.	Display the HRA for each employee given that HRA is 20% of SAL.
+SELECT SAL/5 'HRA is 20% of SAL' FROM EMP;
+
+HRA is 20% of sal
+250
+320
+490
+570
+595
+1000
